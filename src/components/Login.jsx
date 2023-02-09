@@ -2,16 +2,16 @@ import { useState } from "react"
 
 
 
-const Login = () => {
+const Login = ({setAlerta}) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const handleSubmit = (e)=>{
 e.preventDefault()
 if(email.trim() === 'adl@desafiolatam.com' && password.trim()  === '252525'){
-  console.log('Los datos son correctos')
+  setAlerta({msg: 'Sesión iniciada correctamente', color: 'success'})
 }else{
-  console.log('Los datos son incorrectos')
-}
+  setAlerta({msg: 'Datos incorrectos', color: 'danger'})
+  }
   }
   return (
     <div>
